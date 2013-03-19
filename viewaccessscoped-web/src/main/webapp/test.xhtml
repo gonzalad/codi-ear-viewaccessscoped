@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html> 
+<html lang="en" 
+    xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:f="http://java.sun.com/jsf/core" 
+    xmlns:h="http://java.sun.com/jsf/html" 
+    xmlns:ui="http://java.sun.com/jsf/facelets"> 
+    <h:head/> 
+    <h:body> 
+    #{pingController.value} 
+    <h:messages globalOnly="true"/> 
+    <p>windowId=#{currentWindow.id}</p> 
+    <ol> 
+      <li><h:link outcome="test.xhtml" value="GET - windowId propagation"/></li> 
+       <li> 
+         <h:link outcome="test.xhtml" value="GET - no propagation"> 
+           <f:param name="windowId" value=""/> 
+       </h:link> 
+       </li> 
+       <li><a href="#{facesContext.externalContext.request.contextPath}/test.xhtml?windowId=#{currentWindow.id}">GET - windowId propagation with a href</a></li> 
+       <li> 
+         <h:form> 
+           <h:commandButton value="POST"/> POST - windowId propagation 
+         </h:form> 
+       </li> 
+     </ol> 
+  </h:body> 
+</html> 
