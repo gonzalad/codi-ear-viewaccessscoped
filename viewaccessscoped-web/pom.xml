@@ -57,12 +57,6 @@
 				<version>2.3</version>
 				<configuration>
 					<packagingExcludes>WEB-INF/lib/myfaces-extcdi*.jar</packagingExcludes>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<!--  classpathPrefix>lib/</classpathPrefix -->
-						</manifest>
-					</archive>
 				</configuration>
 			</plugin>
 		</plugins>
